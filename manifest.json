@@ -1,0 +1,10 @@
+{
+  "id": "memo-flow",
+  "name": "Memo Flow",
+  "version": "0.1.0",
+  "minAppVersion": "1.8.10",
+  "description": "Capture and browse local Markdown memos in a chronological waterfall.",
+  "author": "Zovo314",
+  "authorUrl": "https://github.com/Zovo314",
+  "isDesktopOnly": false
+}

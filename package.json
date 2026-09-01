@@ -1,0 +1,37 @@
+{
+  "name": "obsidian-memo-flow",
+  "version": "0.1.0",
+  "description": "Capture and browse local Markdown memos in a chronological waterfall.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit && node esbuild.config.mjs production",
+    "test": "python3 -m unittest discover -s tests -v",
+    "check": "npm run build && npm test"
+  },
+  "keywords": [
+    "obsidian",
+    "memos",
+    "flomo",
+    "markdown"
+  ],
+  "author": "Zovo314",
+  "license": "MIT",
+  "homepage": "https://github.com/Zovo314/obsidian-memo-flow#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zovo314/obsidian-memo-flow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zovo314/obsidian-memo-flow/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "esbuild": "^0.25.5",
+    "obsidian": "latest",
+    "typescript": "^5.8.3"
+  }
+}

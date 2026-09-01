@@ -1,0 +1,296 @@
+.memo-flow-view {
+  --memo-flow-width: 760px;
+  --memo-flow-card-bg: var(--background-primary);
+  --memo-flow-border: color-mix(in srgb, var(--background-modifier-border) 78%, transparent);
+  background: var(--background-secondary);
+  overflow-y: auto;
+}
+
+.memo-flow-shell {
+  width: min(var(--memo-flow-width), calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 80px;
+}
+
+.memo-flow-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.memo-flow-header h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+
+.memo-flow-subtitle {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+}
+
+.memo-flow-composer {
+  padding: 16px;
+  border: 1px solid var(--memo-flow-border);
+  border-radius: 14px;
+  background: var(--memo-flow-card-bg);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+}
+
+.memo-flow-composer textarea,
+.memo-flow-modal textarea {
+  display: block;
+  width: 100%;
+  min-height: 92px;
+  padding: 0;
+  resize: vertical;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  line-height: 1.65;
+}
+
+.memo-flow-composer textarea:focus,
+.memo-flow-modal textarea:focus {
+  box-shadow: none;
+}
+
+.memo-flow-composer-footer,
+.memo-flow-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.memo-flow-hint {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+.memo-flow-pending-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.memo-flow-attachment-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.memo-flow-attachment-chip button {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  box-shadow: none;
+}
+
+.memo-flow-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px auto;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 26px;
+}
+
+.memo-flow-filters input[type="search"],
+.memo-flow-filters select {
+  width: 100%;
+}
+
+.memo-flow-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.memo-flow-date-heading {
+  margin: 28px 2px 10px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.memo-flow-card {
+  margin-bottom: 12px;
+  padding: 16px 18px;
+  border: 1px solid var(--memo-flow-border);
+  border-radius: 13px;
+  background: var(--memo-flow-card-bg);
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.memo-flow-card:hover {
+  border-color: var(--interactive-accent);
+}
+
+.memo-flow-card.is-pinned {
+  border-left: 3px solid var(--interactive-accent);
+}
+
+.memo-flow-card.is-archived {
+  opacity: 0.68;
+}
+
+.memo-flow-card-meta {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  margin-bottom: 8px;
+}
+
+.memo-flow-time {
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.memo-flow-source {
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--background-secondary);
+  color: var(--text-faint);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.memo-flow-card-actions {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.memo-flow-card:hover .memo-flow-card-actions,
+.memo-flow-card:focus-within .memo-flow-card-actions {
+  opacity: 1;
+}
+
+.memo-flow-card-actions button {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+}
+
+.memo-flow-card-body {
+  color: var(--text-normal);
+  line-height: 1.72;
+}
+
+.memo-flow-card-body > :first-child {
+  margin-top: 0;
+}
+
+.memo-flow-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+.memo-flow-card-body img {
+  max-height: 560px;
+  border-radius: 9px;
+}
+
+.memo-flow-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.memo-flow-tags button {
+  height: auto;
+  padding: 3px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--background-secondary);
+  box-shadow: none;
+  color: var(--text-accent);
+  font-size: var(--font-ui-smaller);
+}
+
+.memo-flow-empty,
+.memo-flow-end,
+.memo-flow-sentinel {
+  padding: 28px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.memo-flow-empty {
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 13px;
+}
+
+.memo-flow-empty h3 {
+  margin: 0 0 6px;
+}
+
+.memo-flow-empty p {
+  margin: 0;
+}
+
+.memo-flow-modal textarea {
+  min-height: 260px;
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+}
+
+.memo-flow-modal-actions {
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .memo-flow-shell {
+    width: calc(100% - 20px);
+    padding-top: 18px;
+  }
+
+  .memo-flow-header h1 {
+    font-size: 24px;
+  }
+
+  .memo-flow-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .memo-flow-filters input[type="search"] {
+    grid-column: 1 / -1;
+  }
+
+  .memo-flow-card {
+    padding: 14px;
+  }
+
+  .memo-flow-card-actions {
+    opacity: 1;
+  }
+
+  .memo-flow-hint {
+    display: none;
+  }
+}
+
