@@ -73,7 +73,11 @@ class FlomoImporterTest(unittest.TestCase):
         first = FlomoImporter(self.source, self.vault)
         first_plan = first.build_plan()
         first.apply(first_plan)
-        target = next((self.vault / "Memos" / "Entries").rglob("*.md"))
+        target = next(
+            path
+            for path in (self.vault / "Memos" / "Entries").rglob("*.md")
+            if "第一条" in path.read_text(encoding="utf-8")
+        )
         frontmatter, body = split_frontmatter(target.read_text(encoding="utf-8"))
         target.write_text(frontmatter + body.rstrip() + "\n\n本地修改\n", encoding="utf-8")
         html_path = self.source / "notes.html"
@@ -87,4 +91,3 @@ class FlomoImporterTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
